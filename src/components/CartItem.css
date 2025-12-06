@@ -1,0 +1,111 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: 100px 2fr 1fr 1fr 50px;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1rem;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.cart-item-unit-price {
+    color: var(--text-light);
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f1f3f4;
+    padding: 0.2rem;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--text-color);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.quantity-btn:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.quantity-value {
+    padding: 0 0.5rem;
+    font-weight: 600;
+}
+
+.cart-item-total {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.delete-btn {
+    background: transparent;
+    color: #d32f2f;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.delete-btn:hover {
+    background: rgba(211, 47, 47, 0.1);
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        grid-template-columns: 80px 1fr;
+        grid-template-areas:
+            "image details"
+            "image quantity"
+            "total delete";
+        gap: 0.5rem;
+    }
+
+    .cart-item-image {
+        grid-area: image;
+        height: 100%;
+    }
+
+    .cart-item-details {
+        grid-area: details;
+    }
+
+    .cart-item-quantity {
+        grid-area: quantity;
+    }
+
+    .cart-item-total {
+        grid-area: total;
+    }
+
+    .delete-btn {
+        grid-area: delete;
+        justify-self: end;
+    }
+}
